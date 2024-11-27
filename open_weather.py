@@ -1,8 +1,14 @@
 import requests
 
-r = requests.get('http://api.openweathermap.org/data/2.5/weather?q=Ufa&units=metric&lang=ru&APPID=b5798fea07f30825fd1ab229e85beccb').json()
-print("Долгота:", r["coord"]["lon"], "с.ш.")
-print("Широта:", r["coord"]["lat"], "в.д.")
+my_city = "Ufa"
+par = {
+	"lang":"ru",
+	"q":my_city,
+	"appid": "b5798fea07f30825fd1ab229e85beccb",
+	"units": "metric"
+}
+
+r = requests.get('http://api.openweathermap.org/data/2.5/weather?', params = par).json()
 print("Город:", r["name"])
 print("Сейчас:", r["weather"][0]["description"])
 print("Температура:", r["main"]["temp"], "℃")
