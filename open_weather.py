@@ -1,15 +1,19 @@
 import sys
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 my_city = str(sys.argv[1])
 par = {
-	"lang":"ru",
+	"lang": os.getenv("MY_LANGUAGE"),
 	"q":my_city,
-	"appid": "b5798fea07f30825fd1ab229e85beccb",
+	"appid": os.getenv("API_KEY"),
 	"units": "metric"
 }
 
-r = requests.get('http://api.openweathermap.org/data/2.5/weather?', params = par).json()
+r = requests.get(os.getenv("API_URL"), params = par).json()
 print("Город:", r["name"])
 print("Сейчас:", r["weather"][0]["description"])
 print("Температура:", r["main"]["temp"], "℃")
