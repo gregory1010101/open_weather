@@ -1,6 +1,7 @@
+import sys
 import requests
 
-my_city = "Ufa"
+my_city = str(sys.argv[1])
 par = {
 	"lang":"ru",
 	"q":my_city,
