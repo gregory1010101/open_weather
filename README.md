@@ -1,5 +1,7 @@
-Simple project on Python that allows you to see weather in your sity.
+# OpenWeather
 
-OpenWeather API was used. You can get it here www.openweathermap.org
+Simple project on __Python__ that allows you to see weather in your sity.
 
-Use env.example file to run code.
+OpenWeather API was used. You can get it [here](https://openweathermap.org/)
+
+Use __env.example file__ to run code.
